@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a starter kit for a blog built with Next.js and MDX.
 
-## Getting Started
-
-First, run the development server:
+## How to run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or use the VSCode debugger to run the development server, configured in the `.vscode/launch.json` file.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Features:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Static MDX Development**: Using static MDX files makes it easy to start your blog without connecting to third party API's, CDN's or a database. This approach is ideal for simple applications.
+2. **Rich Metadata with Front Matter**: Use the front matter in your MDX files to store essential post metadata. From tags and categories to author information and descriptions, it can be easily parsed using the gray-matter package.
+3. **Stylish Typography with Tailwind CSS**: Apply some default styling to your blog using the Tailwind CSS Typography plugin, making it look like great instantly.
+4. **Code Highlighting**: Use the Rehype Highlight plugin to add syntax highlighting to your code snippets in your desired style.
+5. **SEO Optimized**: Implement some Next.js SEO best practices to make your blog more discoverable.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Combining these elements creates a great starting point for your blog that's easy to customize and reuse in all your projects.
