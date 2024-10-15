@@ -25,3 +25,9 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .custom-container {
+    @apply w-full max-w-[1360px] px-4 sm:px-10 md:mx-auto md:w-[90%];
+  }
+}
