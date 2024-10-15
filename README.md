@@ -1,4 +1,9 @@
-This is a starter kit for a blog built with Next.js and MDX.
+# Next Blog Starter Kit
+This repo is an easy to use starting point for your blogs using Next.js, Tailwind CSS and MDX to create a blog with tags and categories.
+
+[-> Try Live Demo](https://next-blog-starter-kit-woad.vercel.app/blog)
+
+<img width="1156" alt="Next Blog Starter Kit Preview" src="https://github.com/user-attachments/assets/acedc676-7e72-4d69-9839-695f6825f6f2">
 
 ## Key Features:
 
