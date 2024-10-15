@@ -24,7 +24,7 @@ Combining these elements creates a great starting point for your blog that's eas
 
 Or use the VSCode debugger to run the development server, configured in the `.vscode/launch.json` file.
 
-## How to integrate with your own blog
+## How to integrate with your own project
 
 1. Copy the entire `app/blog` folder to your project
 2. Install all packeges
