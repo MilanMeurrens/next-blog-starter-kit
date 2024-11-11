@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import TagPill from "../(components)/TagPill";
 import CategoryLink from "../(components)/CategoryLink";
-import { getPost } from "../(services)/blogPostService";
+import { getPost, getPostsMetadata } from "../(services)/blogPostService";
 import "./github-dark.css";
 import { useMDXComponents as MDXComponents } from "@/mdx-components";
 import { Metadata, ResolvingMetadata } from "next";
@@ -31,6 +31,19 @@ type Props = {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  try {
+    const posts = getPostsMetadata();
+
+    return posts.map((post) => ({
+      slug: post.slug,
+    }));
+  } catch (error) {
+    console.error("Error while generating static params for blog posts", error);
+    return [];
+  }
+}
 
 export async function generateMetadata(
   { params }: Props,
@@ -145,7 +158,7 @@ const page = ({ params: { slug } }: Props) => {
       </div>
 
       {/* MDX CONTENT */}
-      <article className="custom-container prose lg:prose-xl mt-10 max-w-[816px]">
+      <article className="custom-container prose mt-10 max-w-[816px] lg:prose-xl">
         <MDXRemote
           source={content}
           components={MDXComponents({ customComponents })}

@@ -13,6 +13,22 @@ type Props = {
   };
 };
 
+export async function generateStaticParams() {
+  try {
+    const categories = getPostCategories();
+
+    return categories.map((category) => ({
+      slug: category,
+    }));
+  } catch (error) {
+    console.error(
+      "Error while generating static params for blog category pages",
+      error,
+    );
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const category = decodeURIComponent(params.slug);

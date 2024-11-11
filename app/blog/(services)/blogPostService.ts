@@ -81,6 +81,17 @@ export const getPostCategories = (): string[] => {
 };
 
 /**
+ * Returns all unique tags from the blog posts.
+ */
+export const getPostTags = (): string[] => {
+  const posts = getPostsMetadata();
+  const allTags = posts.flatMap((post) => post.tags ?? []);
+  const uniqueTags = Array.from(new Set(allTags));
+
+  return uniqueTags;
+};
+
+/**
  * Returns the content and metadata of a blog post by slug.
  */
 export const getPost = (slug: string): { content: string; data: BlogPost } => {

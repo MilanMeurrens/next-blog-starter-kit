@@ -1,6 +1,9 @@
 import React from "react";
 import BlogPostsGrid from "../../(components)/BlogPostsGrid";
-import { getPostsMetadata } from "../../(services)/blogPostService";
+import {
+  getPostsMetadata,
+  getPostTags,
+} from "../../(services)/blogPostService";
 import { Metadata } from "next";
 
 type Props = {
@@ -8,6 +11,22 @@ type Props = {
     slug: string;
   };
 };
+
+export async function generateStaticParams() {
+  try {
+    const tags = getPostTags();
+
+    return tags.map((tag) => ({
+      slug: tag,
+    }));
+  } catch (error) {
+    console.error(
+      "Error while generating static params for blog tag pages",
+      error,
+    );
+    return [];
+  }
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
